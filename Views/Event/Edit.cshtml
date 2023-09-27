@@ -1,0 +1,369 @@
+﻿
+
+@model EventShow.Models.Eventinfoindex
+
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Edit";
+
+}
+
+
+<main>
+    <div class="container-fluid d-flex justify-content-center" style="padding-top:3em">
+
+        <div class="card w-100">
+
+            <div class="card-header">
+
+                <div class="d-flex" style="justify-content:space-between">
+
+                    <div style="font-size:x-large">
+                        Edit Event
+                    </div>
+
+                    <div>
+                        <a asp-action="Index" class="btn btn-secondary" w-100">Back</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card-body">
+
+
+                <form asp-action="Edit" asp-controller="Event" method="post" enctype="multipart/form-data">
+
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="EventId" />
+                    <input type="hidden" asp-for="EventDetailId" />
+                    <input type="hidden" asp-for="SpeakerId" />
+                    <input type="hidden" asp-for="EventCategoryId" />
+
+
+                    <div>
+
+                        <div class="row">
+
+                            <div class="col-6">
+
+                                <label asp-for="EventName" class="col-form-label">Event Name</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="EventName">
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <label asp-for="EventLocation" class="col-form-label">Event Location</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="EventLocation">
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-6">
+
+                                <label asp-for="EventType" class="col-form-label">EventType</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="EventType">
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <label asp-for="MaxNumber" class="col-form-label">Max Number</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="MaxNumber">
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-6">
+                                <label class="control-label">City</label>
+                                <select class="form-control" asp-for="CityId"
+                                        asp-items="@(new SelectList(ViewBag.city,"CityId","CityName"))">
+                                </select>
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <label class="control-label">Event Category</label>
+                                <select class="form-control" asp-for="EventCategoryId"
+                                        asp-items="@(new SelectList(ViewBag.category,"EventCategoryId","EcategoryName"))">
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row" style="margin-top:1.5em">
+
+                            <div class="col-4">
+
+                                <label asp-for="EventDate" class="col-form-label">Event Date</label>
+
+                                <input class="datefield" data-val="true" data-val-required="Date is required" asp-for="EventDate"
+                                       id="ReleaseDate" name="EventDate" type="date" />
+                            </div>
+
+                            <div class="col-4">
+
+                                <label asp-for="EventStartTime" class="col-form-label">Event Start Time</label>
+
+
+                                <input style="width:50px" id="timepicker" class="datefield" data-val="true" data-val-required="Date is required" asp-for="EventStartTime"
+                                       type="datetime" />
+                            </div>
+
+                            <div class="col-4">
+
+                                <label asp-for="EventEndTime" class="col-form-label">Event End Time</label>
+
+                                <input style="width:50px" id="timepicker" class="datefield" data-val="true" data-val-required="Date is required" asp-for="EventEndTime"
+                                       type="datetime" />
+
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:1em">
+
+                            <div class="col-6">
+
+                                <label asp-for="EventImgPath" class="control-label">Event ImgPath</label>
+                                <div id="chooseFile">
+                                <input type="file" class="form-control imgw" id="imgInp" asp-for="EventImgPath" name="EventImgPath" accept="image/*" /></div>
+
+                            </div>
+
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col">
+                                        <img id="blah"
+                                             src="@("/"+ Model.EventImgPath)"
+                                             class="rounded-square"
+                                             width="300"
+                                             style="border:1px"
+                                             alt="your image"
+                                             asp-append-version="true" accept="image/*" />
+                                    </div>
+
+                                    @*<div class="col">
+                                        <span><a href="@Model.EventImgPath">@Model.EventImgPath</a></span>
+                                    </div>*@
+                                </div>
+                            </div>               
+
+                        </div>
+
+                        <div class="row" style="margin-top:2em">
+
+                            <div class="col-3 imgw">
+
+                                <label class="control-label">Speakers</label>
+                                <select class="form-control" asp-for="SpeakerName"
+                                        asp-items="@(new SelectList(ViewBag.speaker,"SpeakerId","SpeakerName"))" , required="">
+                                </select>
+
+                            </div>
+
+
+                            <div class="col-3">
+
+                                <label asp-for="Edtitle" class="control-label">Title</label>
+                                <input type="text" class="form-control" id="title" asp-for="Edtitle">
+
+                            </div>
+
+                            <div class="col-3">
+
+                                <label asp-for="Edcontent" class="control-label">Content</label>
+                                <input type="text" class="form-control" id="content" asp-for="Edcontent">
+
+                            </div>
+
+                            <div class="col-3">
+
+                                <button type="button" id="add_speaker" class="btn btn-primary" style="margin-top:1.5em">Add New</button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div style="margin-top:2em">
+                            @{ int no = 1; }
+                            <table class="table speakers" style="overflow:auto">
+                                <thead class="thead-light">
+
+                                    <tr>
+                                        <th>No</th>
+
+                                        <th scope="col">
+                                            Speaker Name
+                                        </th>
+
+                                        <th scope="col">
+                                            Title
+                                        </th>
+
+                                        <th scope="col">
+                                            Content
+                                        </th>
+                                        <th></th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    @for (int i = 0; i < Model.oldspeakerlists.Count; i++)
+                                    {
+                                        <tr class="countold">
+
+                                            <td>@no</td>
+                                            <td>
+                                                @Html.EditorFor(modelItem => modelItem.oldspeakerlists[i].oldspeakername, new { htmlAttributes = new { @class = "", @id = "oldspeakername" + i } })
+                                                @Html.HiddenFor(modelItem => modelItem.oldspeakerlists[i].oldspeakerid) 
+                                            </td>
+
+                                            <td>
+                                                @Html.EditorFor(modelItem => modelItem.oldspeakerlists[i].oldspeakertitle, new { htmlAttributes = new { @class = "", @id = "oldspeakertitle" + i } })
+
+                                            </td>
+
+                                            <td>
+                                                @Html.EditorFor(modelItem => modelItem.oldspeakerlists[i].oldspeakercontent,new { htmlAttributes = new { @class = "",@id = "oldspeakercontent" + i } })
+
+                                            </td>
+                                            <td><button type="button" id=@i class="deleteOldSpeaker btn btn-danger">Remove</button></td>
+
+                                        </tr>
+                                        { no = no + 1; }
+                                    }
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                        <div class="container-fluid d-flex justify-content-center">
+                            <input type="submit" class="btn btn-primary btn-lg" value="Save" />
+                        </div>
+
+                    </div>
+
+                    @if (ViewBag.Message != null)
+                    {
+                        <script type="text/javascript">
+                $(function () {
+                    alert("@ViewBag.Message");
+                });
+                        </script>
+                    }
+
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+<script>
+
+
+
+
+
+    $('#add_speaker').click(function (){
+
+        var rowCount = $('.count').length;
+        var oldRowCount = $('.countold').length;
+
+        var speakername = $("#SpeakerName option:selected").text();
+        var speakerid = $('#SpeakerName').val();
+        var title = $('#title').val();
+        var content = $('#content').val();
+        var no = rowCount + oldRowCount + 1;
+        console.log(no)
+
+        var sp = '<tr class="count">' +
+            '<td>'+ no +'</td>' +
+            '<td><input type="text" id="speakername' + rowCount + '" name="insertspeaker[' + rowCount + '].speakername" value=" ' + speakername.toString() + '" readonly /></td>' +
+            '<input type="hidden" id="speakerid ' + rowCount + ' " name="insertspeaker[' + rowCount + '].speakerid" value=" ' + speakerid.toString() + '" readonly />' +
+            '<td><input type="text" id="speakertitle ' + rowCount + ' " name="insertspeaker[' + rowCount + '].speakertitle" value=" ' + title.toString() + '" readonly /></td>' +
+            '<td><input type="text" id="speakercontent ' + rowCount + ' " name="insertspeaker[' + rowCount + '].speakercontent" value=" ' + content.toString() + '" readonly /></td>' +
+            '<td><button type="button" id= ' + rowCount + ' class="deleteSpeaker btn btn-danger">Remove</button></td></tr>';
+
+       
+
+        $(".speakers > tbody").append(sp);
+        document.getElementById("SpeakerName").selectedIndex = 0;
+        document.getElementById("title").value = "";
+        document.getElementById("content").value = "";
+
+    });
+
+    $(document).on("click", ".deleteSpeaker", function ()
+    {
+
+        var sid = this.id;
+        document.getElementById("speakername" + sid).value = null;
+        $(this).closest("tr").hide();
+    });
+
+    $(document).on("click", ".deleteOldSpeaker", function () {
+
+        var oid = this.id;
+        document.getElementById("oldspeakername" + oid).value = null;
+        $(this).closest("tr").hide();
+    });
+
+
+    imgInp.onchange = evt => {
+        const [file] = imgInp.files
+        if (file) {
+            blah.src = URL.createObjectURL(file)
+        }
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

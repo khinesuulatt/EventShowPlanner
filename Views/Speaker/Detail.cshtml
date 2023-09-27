@@ -1,0 +1,166 @@
+﻿
+
+@model EventShow.Models.Speakerinfoindex
+
+
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Detail";
+
+}
+
+
+<main>
+    <div class="container-fluid d-flex justify-content-center" style="padding-top:3em">
+
+        <div class="card w-100">
+
+            <div class="card-header">
+
+                <div class="d-flex" style="justify-content:space-between">
+
+                    <div style="font-size:x-large">
+                        Detail View
+                    </div>
+
+                    <div>
+                        <a asp-action="Index" class="btn btn-secondary" w-100">Back</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card-body">
+
+
+                <form asp-action="Detail" asp-controller="Speaker" method="post" enctype="multipart/form-data">
+
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="SpeakerId" />
+
+                    <div>
+
+                        <div class="row">
+
+                            <div class="col-6">
+
+                                <label asp-for="SpeakerName" class="col-form-label">Speaker Name</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="SpeakerName" disabled>
+
+                            </div>
+
+
+                            <div class="col-6">
+
+                                <label asp-for="Sage" class="col-form-label">Age</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="Sage" disabled>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="row">
+
+                            <div class="col-6">
+
+                                <label asp-for="Professional" class="col-form-label">Professional</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="Professional" disabled>
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <label asp-for="Sjob" class="control-label">Job</label>
+                                <input class="form-control" asp-for="Sjob" disabled />
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <div class="row">
+
+
+                            <div class="col-6">
+
+                                <label asp-for="Saddress" class="col-form-label">Address</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="Saddress" disabled>
+
+                            </div>
+
+                            <div class="col-6">
+                                <label class="control-label">City</label>
+                                <select class="form-control" asp-for="CityId"
+                                        asp-items="@(new SelectList(ViewBag.city, "CityId", "CityName"))" disabled>
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col-6">
+
+                                <label asp-for="Description" class="col-form-label">Biography</label>
+                                <textarea type="text" class="form-control" style="height:100px" asp-for="Description" id="exampleFormControlInput1" readonly></textarea>
+
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <label asp-for="SpeakerImgPath" class="control-label">Image</label>
+                                <img class="form-control imgw" name="FileUpload.FormFile" src="@("/"+ Model.SpeakerImgPath)" disabled>
+
+                       
+                            </div>
+                        </div>
+
+
+                     </div>   
+      
+
+                    @if (ViewBag.Message != null)
+                    {
+                        <script type="text/javascript">
+                $(function () {
+                    alert("@ViewBag.Message");
+                });
+                        </script>
+                    }
+
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

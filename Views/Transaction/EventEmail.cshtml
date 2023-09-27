@@ -1,0 +1,77 @@
+﻿
+@model EventShow.Models.EnrollUser
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .table-bordered {
+            --bs-table-bg: transparent;
+            --bs-table-accent-bg: transparent;
+            --bs-table-striped-color: #212529;
+            --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+            --bs-table-active-color: #212529;
+            --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+            --bs-table-hover-color: #212529;
+            --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+            vertical-align: top;
+            border-color: #dee2e6;
+        }
+
+        .thead {
+            background-color: #efefef;
+        }
+
+        .header-content {
+            background: url('cid:header');
+            padding: 5px;
+            margin: 5px;
+            text-align: center;
+            font-size: 2em;
+            color: #464646;
+        }
+
+        td {
+            border-width: 0 1px;
+            text-align: center;
+        }
+
+        tr, td {
+            border-color: inherit;
+            border-style: solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-content">
+        <p>Please find the below list of Ninjas currently available.</p>
+    </div>
+    <div>
+        <table class="table-bordered">
+            <tr class="thead">
+                <th>Account Name</th>
+                <th>Event Name</th>
+                <th>Location</th>
+                <th>Date and Time</th>
+                <th></th>
+
+            </tr>
+            
+            
+                <tr>
+                    <td>@Model.UserName</td>
+                    <td>@Model.EventName</td>
+                    <td>@Model.EventLocation</td>
+                    <td>Date:@Model.EDate </br>
+                    StartTime:@Model.ESTime EndTime:@Model.EETime</td>
+                    <td></td>         
+                </tr>
+            
+        </table>
+    </div>
+</body>
+</html>

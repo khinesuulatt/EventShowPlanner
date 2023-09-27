@@ -1,0 +1,184 @@
+﻿
+
+@model EventShow.Models.Speakerinfo
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "AddNewSpeaker";
+
+}
+
+
+
+<main>
+    <div class="container-fluid d-flex justify-content-center" style="padding-top:3em">
+
+        <div class="card w-100">
+
+            <div class="card-header">
+
+                <div class="d-flex" style="justify-content:space-between">
+
+                    <div style="font-size:x-large">
+                        Add New
+                    </div>
+
+                    <div>
+                        <a asp-action="Index" class="btn btn-secondary" w-100">Back</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-body">
+
+
+                <form asp-action="AddNewSpeaker" asp-controller="Speaker" method="post" enctype="multipart/form-data">
+
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="SpeakerId" />
+
+                    <div>
+
+                        <div class="row">
+
+                            <div class="col-6">
+
+                                <label asp-for="SpeakerName" class="col-form-label">Speaker Name</label>
+                                <input type="text" class="form-control" asp-for="SpeakerName" id="exampleFormControlInput1" placeholder="Enter Speaker Name">
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <label asp-for="Professional" class="col-form-label">Professional</label>
+                                <input type="text" class="form-control" asp-for="Professional" id="exampleFormControlInput1" placeholder="Enter Professional">
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col-6">
+
+                                <label asp-for="Sage" class="col-form-label">Age</label>
+                                <input type="text" class="form-control" asp-for="Sage" id="exampleFormControlInput1" placeholder="Enter Age">
+                            </div>
+
+                            <div class="col-6">
+
+                                <label asp-for="Sjob" class="col-form-label">Job</label>
+                                <input type="text" class="form-control" asp-for="Sjob" id="exampleFormControlInput1" placeholder="Enter Job">
+                            </div>
+
+
+                        </div>
+
+                        <div class="row">
+
+                            
+
+                            <div class="col-6">
+
+                                <label class="control-label">City</label>
+                                <select class="form-control" asp-for="CityId" aria-label="Select City Name"
+                                        asp-items="@(new SelectList(ViewBag.city,"CityId","CityName"))">
+                                </select>
+                            </div>
+
+                            <div class="col-6">
+
+                                <label asp-for="Saddress" class="col-form-label">Address</label>
+                                <input type="text" class="form-control" asp-for="Saddress" id="exampleFormControlInput1" placeholder="Enter Address">
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-6">
+
+
+                                <div class="row">
+
+                                    <div class="col">
+                                        <label asp-for="SpeakerImgPath" class="control-label">Image</label>
+                                        <input type="file" name="SpeakerImgPath" class="form-control" id="exampleFormControlInput1" asp-for="SpeakerImgPath">
+
+                                    </div>
+                                   
+                                </div>
+
+                                <div class="row" style="margin-top:2em;">
+                                    <div class="form-group" style="justify-content: space-between">
+                                        <div>
+                                            <label class="form-check-label" for="Active">
+                                                Active
+                                            </label>
+                                        
+                                                @Html.CheckBoxFor(m => m.Active, new { @class = "form-check-input" })
+                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+
+                            
+
+                            <div class="col-6">
+
+                                @*<label asp-for="Description" class="col-sm-2 col-form-label">Biography</label>
+                                <input type="text" class="form-control" asp-for="Description" id="exampleFormControlInput1" placeholder="Enter Biography">*@
+
+                                <label asp-for="Description" class="col-form-label">Biography</label>
+                                <textarea type="text" class="form-control" asp-for="Description" id="exampleFormControlInput1" placeholder="Enter Biography" rows="3"></textarea>
+
+                            </div>
+
+                            
+                        </div>
+
+     
+                        
+
+                        <div class="container-fluid d-flex justify-content-center" style="margin-top:2em;">
+                            <input type="submit" class="btn btn-primary" value="Save" />
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+            var msg = '@ViewData["result"]';
+
+              if (msg == '1')
+              {
+                 alert("Speaker Name already exit.");
+                 window.location.href = "@Url.Action("AddNewSpeaker", "Speaker")";
+              }
+    });
+</script>
+
+
+
+
+

@@ -1,0 +1,176 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = EventShow
+build_property.RootNamespace = EventShow
+build_property.ProjectDir = /Users/khinesuulatt/Projects/EventShow/EventShow/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/khinesuulatt/Projects/EventShow/EventShow
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/City/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2l0eS9BZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/City/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2l0eS9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/City/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2l0eS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGFzaGJvYXJkL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Event/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Event/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Event/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Event/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Event/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/EventCategory/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRDYXRlZ29yeS9BZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/EventCategory/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRDYXRlZ29yeS9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/EventCategory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRDYXRlZ29yeS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Feedback/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmVlZGJhY2svSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Speaker/AddNewSpeaker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3BlYWtlci9BZGROZXdTcGVha2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Speaker/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3BlYWtlci9EZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Speaker/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3BlYWtlci9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Speaker/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3BlYWtlci9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Time/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGltZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Transaction/EventEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY3Rpb24vRXZlbnRFbWFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Transaction/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY3Rpb24vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/User/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9EZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Website/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vic2l0ZS9BYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Website/Event.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vic2l0ZS9FdmVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Website/Event1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vic2l0ZS9FdmVudDEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Website/Event2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vic2l0ZS9FdmVudDIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Website/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vic2l0ZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Website/Kumo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vic2l0ZS9LdW1vLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Website/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vic2l0ZS9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Website/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vic2l0ZS9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Website/Speaker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vic2l0ZS9TcGVha2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Website/Test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2Vic2l0ZS9UZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/khinesuulatt/Projects/EventShow/EventShow/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-vkk3y41dv9

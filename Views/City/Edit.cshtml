@@ -1,0 +1,121 @@
+﻿@model EventShow.Models.City
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Edit";
+}
+
+
+<main>
+    <div class="container-fluid d-flex justify-content-center" style="padding-top:3em">
+
+        <div class="card col-lg-7">
+
+            <div class="card-header">
+
+                <div class="d-flex" style="justify-content:space-between">
+
+                    <div style="font-size:x-large">
+                        Edit City List
+                    </div>
+
+                    <div>
+                        <a asp-action="Index" class="btn btn-secondary" w-100">Back</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-body">
+
+
+                <form asp-action="Edit" asp-controller="City" method="post">
+
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="CityId" />
+
+                    <div>
+
+                        <div class="mb-3 d-flex justify-content-center">
+
+                            <label asp-for="CityName" class="col-sm-2 col-form-label">City Name</label>
+                            <input  asp-for="CityName" class="form-control">
+
+                        </div>
+
+                        
+
+                        <div class="form-group">
+
+                            <label class="form-check-label" for="Active">
+                                Active
+                            </label>
+
+                            @Html.CheckBoxFor(m => m.Active, new { @class = "form-check-input" })
+
+                        </div>
+
+                        <div class="container-fluid d-flex justify-content-center">
+                            <input type="submit" class="btn btn-primary" value="Save" />
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+@*<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4"> </h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active"> </li>
+        </ol>
+        <div class="card mb-12 pb-12 mh">
+
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Edit City Name
+            </div>
+
+            <div class="card-body" style="overflow:auto">
+                <form asp-action="Edit" asp-controller="City" method="post">
+
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="CityId" />
+
+                    <div class="form-group">
+                        <label asp-for="CityName" class="control-label">City Name</label>
+                        <input asp-for="CityName" class="form-control" />
+                        <span asp-validation-for="CityName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Active" class="control-label">Active</label>
+                        @Html.CheckBoxFor(m => m.Active)
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-8 offset-2 row">
+                            <div class="col">
+                                <input type="submit" class="btn btn-primary w-100" value="Save" />
+                            </div>
+
+                            <div class="col">
+                                <a asp-action="Index" class="btn btn-sucess" w-100">Back</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</main>*@
+
+

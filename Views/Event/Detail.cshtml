@@ -1,0 +1,261 @@
+﻿
+
+@model EventShow.Models.Eventinfoindex
+
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Detail";
+
+}
+
+
+<main>
+    <div class="container-fluid d-flex justify-content-center" style="padding-top:3em">
+
+        <div class="card w-100">
+
+            <div class="card-header">
+
+                <div class="d-flex" style="justify-content:space-between">
+
+                    <div style="font-size:x-large">
+                        Detail View
+                    </div>
+
+                    <div>
+                        <a asp-action="Index" class="btn btn-secondary" w-100">Back</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card-body">
+
+
+                <form asp-action="Detail" asp-controller="Event" method="post" enctype="multipart/form-data">
+
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="EventId" />
+
+                    <div>
+
+                        <div class="row">
+
+                            <div class="col-6">
+
+                                <label asp-for="EventName" class="col-form-label">Event Name</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="EventName" disabled>
+
+                            </div>
+
+
+                            <div class="col-6">
+
+                                <label asp-for="EventType" class="col-form-label">EventType</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="EventType" disabled>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="row">
+
+                            <div class="col-6">
+
+                                <label asp-for="EventLocation" class="col-form-label">Event Location</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="EventLocation" disabled>
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <label asp-for="MaxNumber" class="control-label">Max Number</label>
+                                <input class="form-control" asp-for="MaxNumber" disabled />
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <div class="row">
+
+                            <div class="col-6">
+                                <label class="control-label">City</label>
+                                <select class="form-control" asp-for="CityId"
+                                        asp-items="@(new SelectList(ViewBag.city, "CityId", "CityName"))" disabled>
+                                </select>
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <label class="control-label">Event Category</label>
+                                <select class="form-control" asp-for="EventCategoryId"
+                                        asp-items="@(new SelectList(ViewBag.category, "EventCategoryId", "EcategoryName"))" disabled>
+                                </select>
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="row" style="margin-top:1.5em">
+
+
+                            <div class="col-4" >
+
+                                <label asp-for="EventDate" class="col-form-label">Event Date</label>
+
+                                <input class="datefield" data-val="true" data-val-required="Date is required" asp-for="EventDate"
+                                       id="ReleaseDate" name="ReleaseDate" type="date" disabled />
+                            </div>
+                        
+
+                        
+
+                            <div class="col-4" >
+
+                                <label asp-for="EventStartTime" class="col-form-label">Event Start Time</label>
+
+
+                                <input style="width:50px" id="timepicker" class="datefield" data-val="true" data-val-required="Date is required" asp-for="EventStartTime"
+                                       type="datetime" disabled />
+                            </div>
+
+                            <div class="col-4">
+
+                                <label asp-for="EventEndTime" class="col-form-label">Event End Time</label>
+
+                                <input style="width:50px" id="timepicker" class="datefield" data-val="true" data-val-required="Date is required" asp-for="EventEndTime"
+                                       type="datetime" disabled />
+
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:1em">
+
+                            <div class="col-12" style="overflow:scroll">
+
+                                <label asp-for="EventImgPath" class="control-label">Image</label>                               
+                                <img class="form-control imgw"  name="FileUpload.FormFile" src="@("/"+ Model.EventImgPath)" disabled >
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2em; overflow: scroll">
+                            @{ int no = 1; }
+                            <table class="table">
+                                <thead class="thead-light">
+
+                                    <tr>
+                                        <th>No</th>
+
+                                        <th scope="col">
+                                            Speaker Name
+                                        </th>
+
+                                        <th scope="col">
+                                            Title
+                                        </th>
+
+                                        <th scope="col">
+                                            Content
+                                        </th>
+
+
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    @for (int i = 0; i < Model.insertspeaker.Count; i++)
+                                    {
+                                        <tr>
+
+                                            <td>@no</td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => modelItem.insertspeaker[i].speakername1)
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => modelItem.insertspeaker[i].speakertitle1)
+
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => modelItem.insertspeaker[i].speakercontent1)
+
+                                            </td>
+
+                                        </tr>
+                                        { no = no + 1; }
+                                    }
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+
+                    @if (ViewBag.Message != null)
+                    {
+                        <script type="text/javascript">
+                $(function () {
+                    alert("@ViewBag.Message");
+                });
+                        </script>
+                    }
+
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+<script>$(document).ready(function () {
+
+        $(".datepicker").datepicker({
+            dateFormat: "dd-mm-yy",
+            changemonth: true,
+            changeyear: true
+        });
+        $('#timepicker').timepicker({
+            timeFormat: "hh:mm tt",
+            changehour: true,
+            changeminute: true,
+            changeAbbreviated AM / PM: true
+            });
+
+
+            });</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

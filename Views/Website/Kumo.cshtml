@@ -1,0 +1,328 @@
+﻿@model EventShow.Models.EventOne
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>EventDetail</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link href="/test/img/favicon.png" rel="icon">
+    <link href="/test/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <link href="/test/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/test/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/test/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/test/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link href="/test/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/test/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/test/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <link href="/test/css/style.css" rel="stylesheet">
+
+
+    <style>
+
+        #header {
+            background: #80b8a9;
+            transition: all 0.5s;
+            z-index: 997;
+            height: 70px;
+        }
+
+            #header.header-scrolled {
+                box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            #header .logo {
+                font-size: 40px;
+                margin: 0;
+                padding: 0;
+                line-height: 1;
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+
+                #header .logo a {
+                    color: #fff;
+                    text-shadow: 2px 2px #444444;
+                }
+
+                #header .logo img {
+                    max-height: 40px;
+                }
+
+        .scrolled-offset {
+            margin-top: 70px;
+        }
+
+        .img-fluid {
+            max-width: 500px;
+            height: auto;
+        }
+
+        .join {
+            width: 200px;
+            height: 50px;
+            border: 1px solid;
+            background-color: #80b8a9;
+            border-radius: 25px;
+            font-size: 18px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            outline: none;
+        }
+
+            .join:hover {
+                border-color: gray;
+                transition: .5s;
+            }
+    </style>
+</head>
+
+<body>
+
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto"><a href="@Url.Action("Index", "Website", new { })">Event Planner</a></h1>
+
+            <nav id="navbar" class="navbar">
+
+                <ul>
+                    <li><a class="nav-link scrollto" href="@Url.Action("Index", "Website", new { })">Home</a></li>
+                    <li><a class="nav-link scrollto" href="@Url.Action("About", "Website", new { })">About</a></li>
+
+                    <li><a class="nav-link scrollto" href="@Url.Action("Register", "Website", new { })">Register</a></li>
+                    <li><a class="nav-link scrollto" href="@Url.Action("Login", "Website", new { })">Login</a></li>
+
+                </ul>
+
+                <i class="bi bi-list mobile-nav-toggle"></i>
+
+            </nav>
+
+        </div>
+    </header>
+
+
+
+    <section class="section">
+
+        <div class="container">
+            <div class="row mb-4 align-items-center">
+                <div class="col-md-6" data-aos="fade-up">
+                    <h2>@Html.DisplayFor(modelItem => modelItem.EventName) </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-section pb-0">
+            <div class="container">
+                <div class="row align-items-stretch">
+                    <div class="col-md-6" data-aos="fade-up">
+                        <img src="@("/"+ Model.EventImgPath)" alt="Image" class="img-fluid" style="max-height:600px">
+                    </div>
+                    <div class="col-md-6 ml-auto" data-aos="fade-up" data-aos-delay="100" style="background-color: rgba(227, 227, 228, 0.5); border-radius:25px; font-size:x-large; justify-content: center; display: flex; color: gray;">
+                        <div class="sticky-content" style="margin-top:3em;">
+                            <h3 class="h3" style="font-size: xx-large; color:black;">@Html.DisplayFor(modelItem => modelItem.EventName) </h3>
+                            <p class="mb-4"><span class="text-muted">@Html.DisplayFor(modelItem => modelItem.EcategoryName)</span></p>
+
+
+                            <div class="sticky-content" style="margin-top:3em; margin-bottom:5em;">
+                                <ul class="mb-5" style="color:black">
+
+                                    <li>City: @Html.DisplayFor(modelItem => modelItem.CityName)</li>
+                                    <li>Location: @Html.DisplayFor(modelItem => modelItem.EventLocation)</li>
+                                    <li>Date: @Html.DisplayFor(modelItem => modelItem.event_date)</li>
+                                    <li>Start Time: @Html.DisplayFor(modelItem => modelItem.start_time)</li>
+                                    <li>End Time: @Html.DisplayFor(modelItem => modelItem.end_time)</li>
+                                </ul>
+
+                                <form>
+                                    @if (DateTime.ParseExact(Model.event_date, "MM/dd/yyyy", null) > DateTime.Now)
+                                    {
+                                        <div>
+                                            @Html.HiddenFor(modelItem => modelItem.EventId)
+                                            @Html.HiddenFor(modelItem => modelItem.loginuserid)
+
+                                            <div style="display:flex; justify-content:center;">
+                                                <input class="join" type="submit" value="Join the event" />
+                                            </div>
+
+
+                                        </div>
+                                    }
+
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <section id="team" class="team section-bg" style="margin-top:3em">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Speakers</h2>
+
+            </div>
+
+            <div class="row">
+
+                @foreach (var speaker in Model.speakerlist)
+                {
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 d-flex align-items-stretch">
+                        <div class="member">
+
+                            <a href="@Url.Action("Speaker", "Website", new {id= speaker.speakerid})" class="item-wrap fancybox">
+                                <img class="img-fluid card-img-top" src="@("/"+ speaker.SpeakerImgPath)" alt="...">
+                            </a>
+
+                            @*<img src="@("/"+ speaker.SpeakerImgPath)" alt="" data-mdb-toggle="popover" title="Popover title" data-mdb-content="And here's some amazing content. It's very engaging. Right?" data-mdb-trigger="hover">*@
+
+                            <h4>@Html.DisplayFor(modelItem => speaker.speakername)</h4>
+                            <span>@Html.DisplayFor(modelItem => speaker.speakertitle)</span>
+                            <p>
+                                @Html.DisplayFor(modelItem => speaker.speakercontent)
+                            </p>
+
+
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <footer id="footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="d-flex" style="justify-content:space-between">
+                        <div class="col-lg-6 col-md-6 footer-contact">
+                            <h3>Office address</h3>
+                            <p>
+                                A108 Adam Street <br>
+                                New York, NY 535022<br>
+                                United States <br><br>
+                                <strong>Phone:</strong> +95 9 12345678<br>
+                                <strong>Email:</strong> eventplanner122022@gmail.com<br>
+                            </p>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("Index", "Website", new { })">Home</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("About", "Website", new { })">About us</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("Register", "Website", new { })">Register</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("Login", "Website", new { })">Login</a></li>
+
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="container d-md-flex py-4">
+
+
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/test/vendor/aos/aos.js"></script>
+    <script src="/test/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/test/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/test/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/test/vendor/php-email-form/validate.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="/test/js/main.js"></script>
+
+    <script type="text/javascript">
+
+        $("form").submit(function (e)
+        {
+            e.preventDefault();
+            var $form = $(this);
+            var data = $form.serialize();
+
+            CheckLoginUser(data);
+        });
+
+        function CheckLoginUser(data) {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Transaction", "Website")',
+                data: data,
+                success: function (response)
+                {
+                    {
+                        if (response.success) {
+
+                            alert("Thank you for your interesting and please wait we will send you QR code!")
+                        }
+                        else
+                        {
+                            alert("You neet to login your account first, please try again!");
+                        }
+
+                    }
+
+                }
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+

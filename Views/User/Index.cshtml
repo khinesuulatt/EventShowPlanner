@@ -1,0 +1,140 @@
+﻿@model List<EventShow.Models.User>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Index";
+}
+
+
+
+
+<main>
+
+    <div class="container-fluid d-flex justify-content-center" style="padding-top:3em">
+
+
+        <div class="card w-100">
+
+            <div class="card-header">
+
+                <div class="d-flex" style="justify-content:space-between">
+
+                    <div style="font-size:xx-large">
+                        Member List
+                    </div>
+
+                  
+                </div>
+
+
+            </div>
+
+            <div class="card-body" style="overflow:auto">
+
+                @{ int no = 1; }
+                <table id="example" class="display" style="overflow:auto">
+                    <thead>
+
+                        <tr>
+                            <th>No</th>
+
+                            <th scope="col">
+                                Name
+                            </th>
+
+
+                            <th scope="col">
+                                Address
+                            </th>
+
+                            <th scope="col">
+                                Gender
+                            </th>
+
+                            <th scope="col">
+                                Status
+                            </th>
+
+                            <th scope="col">
+                                Action
+                            </th>
+                            
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>@no</td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserName)
+                                    @Html.HiddenFor(modelItem => item.UserId)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserAddress)
+
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Gender)
+
+                                </td>
+
+                                <td>
+
+                                    @*@Html.DisplayFor(modelItem => item.Active)*@
+
+                                    @if (item.Active == true)
+                                    {
+                                        
+                                        <span class="badge rounded-pill bg-success">Active</span>
+                                    }
+
+                                    else
+                                    {
+                                        <span class="badge rounded-pill bg-danger">In Active</span>
+                                    }
+
+                                </td>
+
+                                <td>
+                                    <a class="btn btn-outline-secondary" href="@Url.Action("Detail", "User", new { id = @item.UserId})">
+                                        Detail
+                                    </a>
+
+                                    @if (item.Active == true)
+                                    {
+                                        <a class="btn btn-outline-secondary"  href="@Url.Action("Lock", "User", new { id = @item.UserId})">
+                                            Lock
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-outline-secondary"  href="@Url.Action("Unlock", "User", new { id = @item.UserId})">
+                                            Unlock
+                                        </a>
+                                    }
+                                 
+                                </td>
+
+
+                            </tr>
+                            { no = no + 1; }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+@section Scripts{
+    <script>$(document).ready(function () {
+        $('#example').DataTable();
+    });</script> }
+

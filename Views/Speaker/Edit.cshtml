@@ -1,0 +1,172 @@
+﻿@model EventShow.Models.Speakerinfoindex
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Edit";
+}
+
+
+<main>
+    <div class="container-fluid d-flex justify-content-center" style="padding-top:3em">
+
+        <div class="card w-100">
+
+            <div class="card-header">
+
+                <div class="d-flex" style="justify-content:space-between">
+
+                    <div style="font-size:x-large">
+                        Edit Speaker Information
+                    </div>
+
+                    <div>
+                        <a asp-action="Index" class="btn btn-secondary" w-100">Back</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-body">
+
+
+                <form asp-action="Edit" asp-controller="Speaker" method="post" enctype="multipart/form-data">
+
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="SpeakerId" />
+
+                    <div>
+
+                        <div class="row">
+
+                            <div class="col-6">
+
+                                <label asp-for="SpeakerName" class="col-form-label">Speaker Name</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="SpeakerName">
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <label asp-for="Professional" class="col-form-label">Professional</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="Professional">
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-6">
+
+                                <label asp-for="Sage" class="col-form-label">Age</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="Sage">
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <label asp-for="Sjob" class="col-form-label">Job</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="Sjob">
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+
+                            <div class="col-6">
+
+                                <label class="control-label">City</label>
+                                <select class="form-control" asp-for="CityId" aria-label="Select City Name"
+                                        asp-items="@(new SelectList(ViewBag.city,"CityId","CityName"))">
+                                </select>
+                            </div>
+
+
+                            <div class="col-6">
+
+                                <label asp-for="Saddress" class="col-form-label">Address</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="Saddress">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+     
+
+                            <div class="col-6" style="margin-top:1em">
+
+                                <label class="form-check-label" for="Active">
+                                    Active
+                                </label>
+                                @Html.CheckBoxFor(m => m.Active, new { @class = "form-check-input" })
+                            </div>
+
+                            <div class="col-6">
+
+                                <label asp-for="SpeakerImgPath" class="control-label">Image</label>
+                                <div id="chooseFile">
+                                    <input type="file" class="form-control imgw" id="imgInp" asp-for="SpeakerImgPath" name="SpeakerImgPath" accept="image/*" />
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="row">
+  
+                            <div class="col-6">
+
+                                <label asp-for="Description" class="control-label">Biography</label>
+                                <textarea type="text" class="form-control imgw" asp-for="Description" id="exampleFormControlInput1" rows="3"></textarea>
+
+                            </div>
+
+                            <div class="col-6 imgw" style="margin-top:2em">
+
+                                <div class="row">
+                                    <div class="col">
+                                        <img id="blah"
+                                             src="@("/"+ Model.SpeakerImgPath)"
+                                             class="rounded-square"
+                                             width="300"
+                                             style="border:1px"
+                                             alt="your image"
+                                             asp-append-version="true" accept="image/*" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                      
+
+
+                        <div class="container-fluid d-flex justify-content-center" style="margin-top:2em">
+                            <input type="submit" class="btn btn-primary btn-lg" value="Save" />
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    imgInp.onchange = evt => {
+        const [file] = imgInp.files
+        if (file) {
+            blah.src = URL.createObjectURL(file)
+        }
+    }
+
+</script>
+
+
